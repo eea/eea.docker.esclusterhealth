@@ -13,7 +13,7 @@ fi
 PORT=${PORT:-12345}
 CHECK_PERIOD=${CHECK_PERIOD:-10}
 YELLOW_WAIT=${YELLOW_WAIT:-60}
-CLIENT_WAIT=${CLIENT_WAIT:-30}
+CLIENT_WAIT=${CLIENT_WAIT:-60}
 
 #remove trailing slash
 ES_URL=$(echo $ES_URL | sed 's/\/$//')
@@ -49,7 +49,6 @@ health_check()
    # Client responding, checking health status "
    if [ $(grep -c '"status":"green"' temp) -eq 1 ]; then
        state="GREEN"
-       echo "Received status $state from healthcheck"
    else
   
      if [ $(grep -c '"status":"yellow"' temp) -eq 1 ]; then
