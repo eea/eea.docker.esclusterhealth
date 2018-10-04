@@ -9,8 +9,8 @@ Docker image to use in rancher healthchecks to expose a port if  ElasticSearch c
 * ES_PASSWORD - ElasticSearch password, if  needed
 * PORT - Port that will be UP when cluster is healthy and DOWN when it's not, default 12345
 * CHECK_PERIOD - How often the check is done, seconds , default 10
-* YELLOW_WAIT - seconds to wait before stopping the port when cluster is YELLOW, default 10
-* CLIENT_WAIT - seconds to wait before stopping the port when  ES url is not responding
+* YELLOW_WAIT - seconds to wait before stopping the port when cluster is YELLOW, default 60
+* CLIENT_WAIT - seconds to wait before stopping the port when  ES url is not responding, default 60
 
 
 ## Usage
