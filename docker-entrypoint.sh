@@ -20,7 +20,7 @@ ES_URL=$(echo $ES_URL | sed 's/\/$//')
 
 
 if [ -n "$ES_USER" ] && [ -n "$ES_PASSWORD" ]; then
-   CHECK_URL=$(  echo $ES_URL/_cluster/health | awk -F "://" -v user="$ES_USER" -v pass="$ES_PASSWORD"  '{print $1"://"user":"pass"@"$2 }' )
+    CHECK_URL="-u $ES_USER:\"$ES_PASSWORD\" $ES_URL/_cluster/health"
 else
     CHECK_URL=$ES_URL/_cluster/health
 fi
